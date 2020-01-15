@@ -1,6 +1,6 @@
-## (Array) chunk 数组分块函数
+# (Array) chunk 数组分块函数
 
-### 原来我写的：
+## mine
 
 ```js
 const splitArray = (ary, num = 4) =>
@@ -17,11 +17,11 @@ const splitArray = (ary, num = 4) =>
 }, [])
 ```
 
-### lodash：
+## lodash
 
 ```js
-function chunk(array, size = 1) {
-  size = Math.max(toInteger(size), 0)
+function chunk(array, size = 4) {
+  size = Math.max(size, 0)
   const length = array == null ? 0 : array.length
   if (!length || size < 1) {
     return []
@@ -36,3 +36,8 @@ function chunk(array, size = 1) {
   return result
 }
 ```
+
+## benchmark
+
+* lodash chunk: 基准测试耗时 94969 纳秒
+* splitArray: 基准测试耗时 54910 纳秒
